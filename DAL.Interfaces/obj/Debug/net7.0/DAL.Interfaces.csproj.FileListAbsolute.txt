@@ -1,0 +1,15 @@
+C:\Users\Sergey\RiderProjects\SergorilaPAY\DAL.Interfaces\bin\Debug\net7.0\DAL.Interfaces.deps.json
+C:\Users\Sergey\RiderProjects\SergorilaPAY\DAL.Interfaces\bin\Debug\net7.0\DAL.Interfaces.dll
+C:\Users\Sergey\RiderProjects\SergorilaPAY\DAL.Interfaces\bin\Debug\net7.0\DAL.Interfaces.pdb
+C:\Users\Sergey\RiderProjects\SergorilaPAY\DAL.Interfaces\bin\Debug\net7.0\Entities.dll
+C:\Users\Sergey\RiderProjects\SergorilaPAY\DAL.Interfaces\bin\Debug\net7.0\Entities.pdb
+C:\Users\Sergey\RiderProjects\SergorilaPAY\DAL.Interfaces\obj\Debug\net7.0\DAL.Interfaces.csproj.AssemblyReference.cache
+C:\Users\Sergey\RiderProjects\SergorilaPAY\DAL.Interfaces\obj\Debug\net7.0\DAL.Interfaces.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Sergey\RiderProjects\SergorilaPAY\DAL.Interfaces\obj\Debug\net7.0\DAL.Interfaces.AssemblyInfoInputs.cache
+C:\Users\Sergey\RiderProjects\SergorilaPAY\DAL.Interfaces\obj\Debug\net7.0\DAL.Interfaces.AssemblyInfo.cs
+C:\Users\Sergey\RiderProjects\SergorilaPAY\DAL.Interfaces\obj\Debug\net7.0\DAL.Interfaces.csproj.CoreCompileInputs.cache
+C:\Users\Sergey\RiderProjects\SergorilaPAY\DAL.Interfaces\obj\Debug\net7.0\DAL.Interfaces.csproj.CopyComplete
+C:\Users\Sergey\RiderProjects\SergorilaPAY\DAL.Interfaces\obj\Debug\net7.0\DAL.Interfaces.dll
+C:\Users\Sergey\RiderProjects\SergorilaPAY\DAL.Interfaces\obj\Debug\net7.0\refint\DAL.Interfaces.dll
+C:\Users\Sergey\RiderProjects\SergorilaPAY\DAL.Interfaces\obj\Debug\net7.0\DAL.Interfaces.pdb
+C:\Users\Sergey\RiderProjects\SergorilaPAY\DAL.Interfaces\obj\Debug\net7.0\ref\DAL.Interfaces.dll
