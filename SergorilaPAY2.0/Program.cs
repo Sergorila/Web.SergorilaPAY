@@ -1,6 +1,11 @@
+using System.Text.Json.Serialization;
+using BLL;
+using BLL.Interfaces;
+using DAL;
 using Entities;
 using Microsoft.EntityFrameworkCore;
 using DAL.DBContext;
+using DAL.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,15 +16,33 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-var config = builder.Configuration
-    .GetSection("EnvironmentVariables")
-    .Get<EnvironmentVariables>();
+builder.Services.AddScoped<IUserDao, UserDao>();
+builder.Services.AddScoped<ICategoryDao, CategoryDao>();
+builder.Services.AddScoped<IProductDao, ProductDao>();
+builder.Services.AddScoped<IOrderDao, OrderDao>();
+builder.Services.AddScoped<IImgDao, ImgDao>();
 
-builder.Services.AddEntityFrameworkNpgsql().AddDbContext<NpgsqlContext>(
-    options =>
+builder.Services.AddScoped<IUserLogic, UserLogic>();
+builder.Services.AddScoped<IUserLogic, UserLogic>();
+builder.Services.AddScoped<IHrDeparmentLogic, HrDepartmentLogic>();
+
+
+builder.Services.AddControllers().AddJsonOptions(options =>
     {
-        options.UseNpgsql(config?.ConnectionString);
+        options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+        var jsonConverter = new JsonStringEnumConverter();
+        options.JsonSerializerOptions.Converters.Add(jsonConverter);
+    }
+);
+
+builder.Services.AddDbContextFactory<FactoryContext>(
+    optionsAction =>
+    {
+        optionsAction
+            .UseNpgsql(config?.NpgsqlConnectionString);
     });
+
+
 
 var app = builder.Build();
 
@@ -46,4 +69,4 @@ var orders = context.Orders;
 var categories = context.Categories;
 var images = context.Images;
 
-//app.Run();
+app.Run();
