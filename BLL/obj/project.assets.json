@@ -198,24 +198,10 @@
           "buildTransitive/net6.0/_._": {}
         }
       },
-      "BLL.Interfaces/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Entities": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/BLL.Interfaces.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/BLL.Interfaces.dll": {}
-        }
-      },
       "DAL/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
-          "DAL.Interfaces": "1.0.0",
           "Entities": "1.0.0",
           "Microsoft.EntityFrameworkCore": "7.0.3"
         },
@@ -224,19 +210,6 @@
         },
         "runtime": {
           "bin/placeholder/DAL.dll": {}
-        }
-      },
-      "DAL.Interfaces/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Entities": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/DAL.Interfaces.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/DAL.Interfaces.dll": {}
         }
       },
       "Entities/1.0.0": {
@@ -562,20 +535,10 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "BLL.Interfaces/1.0.0": {
-      "type": "project",
-      "path": "../BLL.Interfaces/BLL.Interfaces.csproj",
-      "msbuildProject": "../BLL.Interfaces/BLL.Interfaces.csproj"
-    },
     "DAL/1.0.0": {
       "type": "project",
       "path": "../DAL/DAL.csproj",
       "msbuildProject": "../DAL/DAL.csproj"
-    },
-    "DAL.Interfaces/1.0.0": {
-      "type": "project",
-      "path": "../DAL.Interfaces/DAL.Interfaces.csproj",
-      "msbuildProject": "../DAL.Interfaces/DAL.Interfaces.csproj"
     },
     "Entities/1.0.0": {
       "type": "project",
@@ -585,7 +548,6 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
-      "BLL.Interfaces >= 1.0.0",
       "DAL >= 1.0.0"
     ]
   },
@@ -624,9 +586,6 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\Sergey\\RiderProjects\\SergorilaPAY\\BLL.Interfaces\\BLL.Interfaces.csproj": {
-              "projectPath": "C:\\Users\\Sergey\\RiderProjects\\SergorilaPAY\\BLL.Interfaces\\BLL.Interfaces.csproj"
-            },
             "C:\\Users\\Sergey\\RiderProjects\\SergorilaPAY\\DAL\\DAL.csproj": {
               "projectPath": "C:\\Users\\Sergey\\RiderProjects\\SergorilaPAY\\DAL\\DAL.csproj"
             }

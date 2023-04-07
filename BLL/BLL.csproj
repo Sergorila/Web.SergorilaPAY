@@ -7,7 +7,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\BLL.Interfaces\BLL.Interfaces.csproj" />
       <ProjectReference Include="..\DAL\DAL.csproj" />
     </ItemGroup>
 

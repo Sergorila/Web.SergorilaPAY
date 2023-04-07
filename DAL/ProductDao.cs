@@ -7,7 +7,7 @@ namespace DAL;
 
 public class ProductDao : BaseDao, IProductDao
 {
-    protected ProductDao(NpgsqlContext dbContext) : base(dbContext)
+    public ProductDao(NpgsqlContext dbContext) : base(dbContext)
     {
     }
 

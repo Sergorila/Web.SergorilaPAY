@@ -6,7 +6,7 @@ namespace DAL;
 
 public class UserDao : BaseDao, IUserDao
 {
-    protected UserDao(NpgsqlContext dbContext) : base(dbContext)
+    public UserDao(NpgsqlContext dbContext) : base(dbContext)
     {
     }
 

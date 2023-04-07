@@ -7,7 +7,7 @@ namespace DAL;
 
 public class ImgDao : BaseDao, IImgDao
 {
-    protected ImgDao(NpgsqlContext dbContext) : base(dbContext)
+    public ImgDao(NpgsqlContext dbContext) : base(dbContext)
     {
     }
 

@@ -7,7 +7,7 @@ namespace DAL;
 
 public class CategoryDao : BaseDao, ICategoryDao
 {
-    protected CategoryDao(NpgsqlContext dbContext) : base(dbContext)
+    public CategoryDao(NpgsqlContext dbContext) : base(dbContext)
     {
     }
 

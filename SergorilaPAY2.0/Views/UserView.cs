@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using Entities;
 
 namespace SergorilaPAY2._0.Views;
@@ -19,5 +20,6 @@ public class UserView
     [Required]
     public string? Phone { get; set; }
 
-    [Required] public string TelegramID { get; set; }
+    [Required] 
+    public string TelegramID { get; set; }
 }

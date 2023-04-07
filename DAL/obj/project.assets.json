@@ -198,19 +198,6 @@
           "buildTransitive/net6.0/_._": {}
         }
       },
-      "DAL.Interfaces/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Entities": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/DAL.Interfaces.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/DAL.Interfaces.dll": {}
-        }
-      },
       "Entities/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
@@ -534,11 +521,6 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "DAL.Interfaces/1.0.0": {
-      "type": "project",
-      "path": "../DAL.Interfaces/DAL.Interfaces.csproj",
-      "msbuildProject": "../DAL.Interfaces/DAL.Interfaces.csproj"
-    },
     "Entities/1.0.0": {
       "type": "project",
       "path": "../Entities/Entities.csproj",
@@ -547,7 +529,6 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
-      "DAL.Interfaces >= 1.0.0",
       "Entities >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 7.0.3"
     ]
@@ -587,9 +568,6 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\Sergey\\RiderProjects\\SergorilaPAY\\DAL.Interfaces\\DAL.Interfaces.csproj": {
-              "projectPath": "C:\\Users\\Sergey\\RiderProjects\\SergorilaPAY\\DAL.Interfaces\\DAL.Interfaces.csproj"
-            },
             "C:\\Users\\Sergey\\RiderProjects\\SergorilaPAY\\Entities\\Entities.csproj": {
               "projectPath": "C:\\Users\\Sergey\\RiderProjects\\SergorilaPAY\\Entities\\Entities.csproj"
             }

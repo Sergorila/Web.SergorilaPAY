@@ -7,7 +7,7 @@ namespace DAL;
 
 public class OrderDao : BaseDao, IOrderDao
 {
-    protected OrderDao(NpgsqlContext dbContext) : base(dbContext)
+    public OrderDao(NpgsqlContext dbContext) : base(dbContext)
     {
     }
 

@@ -25,11 +25,9 @@ C:\Users\Sergey\RiderProjects\SergorilaPAY\SergorilaPAY2.0\bin\Debug\net7.0\Swas
 C:\Users\Sergey\RiderProjects\SergorilaPAY\SergorilaPAY2.0\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\Sergey\RiderProjects\SergorilaPAY\SergorilaPAY2.0\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\Sergey\RiderProjects\SergorilaPAY\SergorilaPAY2.0\bin\Debug\net7.0\DAL.dll
-C:\Users\Sergey\RiderProjects\SergorilaPAY\SergorilaPAY2.0\bin\Debug\net7.0\DAL.Interfaces.dll
 C:\Users\Sergey\RiderProjects\SergorilaPAY\SergorilaPAY2.0\bin\Debug\net7.0\Entities.dll
 C:\Users\Sergey\RiderProjects\SergorilaPAY\SergorilaPAY2.0\bin\Debug\net7.0\DAL.pdb
 C:\Users\Sergey\RiderProjects\SergorilaPAY\SergorilaPAY2.0\bin\Debug\net7.0\Entities.pdb
-C:\Users\Sergey\RiderProjects\SergorilaPAY\SergorilaPAY2.0\bin\Debug\net7.0\DAL.Interfaces.pdb
 C:\Users\Sergey\RiderProjects\SergorilaPAY\SergorilaPAY2.0\obj\Debug\net7.0\SergorilaPAY2.0.csproj.AssemblyReference.cache
 C:\Users\Sergey\RiderProjects\SergorilaPAY\SergorilaPAY2.0\obj\Debug\net7.0\SergorilaPAY2.0.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Sergey\RiderProjects\SergorilaPAY\SergorilaPAY2.0\obj\Debug\net7.0\SergorilaPAY2.0.AssemblyInfoInputs.cache
@@ -52,5 +50,5 @@ C:\Users\Sergey\RiderProjects\SergorilaPAY\SergorilaPAY2.0\obj\Debug\net7.0\Serg
 C:\Users\Sergey\RiderProjects\SergorilaPAY\SergorilaPAY2.0\obj\Debug\net7.0\SergorilaPAY2.0.genruntimeconfig.cache
 C:\Users\Sergey\RiderProjects\SergorilaPAY\SergorilaPAY2.0\obj\Debug\net7.0\ref\SergorilaPAY2.0.dll
 C:\Users\Sergey\RiderProjects\SergorilaPAY\SergorilaPAY2.0\bin\Debug\net7.0\AutoMapper.dll
-C:\Users\Sergey\RiderProjects\SergorilaPAY\SergorilaPAY2.0\bin\Debug\net7.0\BLL.Interfaces.dll
-C:\Users\Sergey\RiderProjects\SergorilaPAY\SergorilaPAY2.0\bin\Debug\net7.0\BLL.Interfaces.pdb
+C:\Users\Sergey\RiderProjects\SergorilaPAY\SergorilaPAY2.0\bin\Debug\net7.0\BLL.dll
+C:\Users\Sergey\RiderProjects\SergorilaPAY\SergorilaPAY2.0\bin\Debug\net7.0\BLL.pdb

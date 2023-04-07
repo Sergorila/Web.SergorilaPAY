@@ -1,4 +1,5 @@
 using System.Text.Json.Serialization;
+using AutoMapper;
 using BLL;
 using BLL.Interfaces;
 using DAL;
@@ -6,8 +7,22 @@ using Entities;
 using Microsoft.EntityFrameworkCore;
 using DAL.DBContext;
 using DAL.Interfaces;
+using SergorilaPAY2._0;
 
 var builder = WebApplication.CreateBuilder(args);
+
+var config = builder.Configuration
+    .GetSection("EnvironmentVariables")
+    .Get<EnvironmentVariables>();
+
+var mappingConfig = new MapperConfiguration(mc =>
+{
+    var mapping = new Mapping();
+    mc.AddProfile(mapping);
+});
+
+IMapper mapper = mappingConfig.CreateMapper();
+builder.Services.AddSingleton(mapper);
 
 // Add services to the container.
 
@@ -15,17 +30,21 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddLogging();  
+
+//var options = new DbContextOptionsBuilder<NpgsqlContext>();
+//options.UseNpgsql(config?.ConnectionString);
 
 builder.Services.AddScoped<IUserDao, UserDao>();
-builder.Services.AddScoped<ICategoryDao, CategoryDao>();
-builder.Services.AddScoped<IProductDao, ProductDao>();
-builder.Services.AddScoped<IOrderDao, OrderDao>();
-builder.Services.AddScoped<IImgDao, ImgDao>();
-
+//builder.Services.AddScoped<ICategoryDao, CategoryDao>();
+//builder.Services.AddScoped<IProductDao, ProductDao>();
+//builder.Services.AddScoped<IOrderDao, OrderDao>();
+//builder.Services.AddScoped<IImgDao, ImgDao>();
 builder.Services.AddScoped<IUserLogic, UserLogic>();
-builder.Services.AddScoped<IUserLogic, UserLogic>();
-builder.Services.AddScoped<IHrDeparmentLogic, HrDepartmentLogic>();
-
+//builder.Services.AddScoped<ICategoryLogic, CategoryLogic>();
+//builder.Services.AddScoped<IProductLogic, ProductLogic>();
+//builder.Services.AddScoped<IOrderLogic, OrderLogic>();
+//builder.Services.AddScoped<IImgLogic, ImgLogic>();
 
 builder.Services.AddControllers().AddJsonOptions(options =>
     {
@@ -35,14 +54,12 @@ builder.Services.AddControllers().AddJsonOptions(options =>
     }
 );
 
-builder.Services.AddDbContextFactory<FactoryContext>(
+builder.Services.AddDbContext<NpgsqlContext>(
     optionsAction =>
     {
         optionsAction
-            .UseNpgsql(config?.NpgsqlConnectionString);
+            .UseNpgsql(config?.ConnectionString);
     });
-
-
 
 var app = builder.Build();
 
@@ -58,15 +75,5 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
-
-var options = new DbContextOptionsBuilder<NpgsqlContext>();
-options.UseNpgsql(config?.ConnectionString);
-var context = new NpgsqlContext(options.Options);
-
-var users = context.Users;
-var products = context.Products;
-var orders = context.Orders;
-var categories = context.Categories;
-var images = context.Images;
 
 app.Run();

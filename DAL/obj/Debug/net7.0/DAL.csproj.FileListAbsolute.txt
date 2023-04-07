@@ -6,9 +6,7 @@ C:\Users\Sergey\RiderProjects\SergorilaPAY\DAL\obj\Debug\net7.0\DAL.csproj.CoreC
 C:\Users\Sergey\RiderProjects\SergorilaPAY\DAL\bin\Debug\net7.0\DAL.deps.json
 C:\Users\Sergey\RiderProjects\SergorilaPAY\DAL\bin\Debug\net7.0\DAL.dll
 C:\Users\Sergey\RiderProjects\SergorilaPAY\DAL\bin\Debug\net7.0\DAL.pdb
-C:\Users\Sergey\RiderProjects\SergorilaPAY\DAL\bin\Debug\net7.0\DAL.Interfaces.dll
 C:\Users\Sergey\RiderProjects\SergorilaPAY\DAL\bin\Debug\net7.0\Entities.dll
-C:\Users\Sergey\RiderProjects\SergorilaPAY\DAL\bin\Debug\net7.0\DAL.Interfaces.pdb
 C:\Users\Sergey\RiderProjects\SergorilaPAY\DAL\bin\Debug\net7.0\Entities.pdb
 C:\Users\Sergey\RiderProjects\SergorilaPAY\DAL\obj\Debug\net7.0\DAL.csproj.CopyComplete
 C:\Users\Sergey\RiderProjects\SergorilaPAY\DAL\obj\Debug\net7.0\DAL.dll

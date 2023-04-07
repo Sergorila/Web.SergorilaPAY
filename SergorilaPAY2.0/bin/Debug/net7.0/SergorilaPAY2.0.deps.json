@@ -9,7 +9,7 @@
       "SergorilaPAY2.0/1.0.0": {
         "dependencies": {
           "AutoMapper": "12.0.1",
-          "BLL.Interfaces": "1.0.0",
+          "BLL": "1.0.0",
           "DAL": "1.0.0",
           "Entities": "1.0.0",
           "Microsoft.AspNetCore.OpenApi": "7.0.3",
@@ -249,30 +249,21 @@
           }
         }
       },
-      "BLL.Interfaces/1.0.0": {
+      "BLL/1.0.0": {
         "dependencies": {
-          "Entities": "1.0.0"
+          "DAL": "1.0.0"
         },
         "runtime": {
-          "BLL.Interfaces.dll": {}
+          "BLL.dll": {}
         }
       },
       "DAL/1.0.0": {
         "dependencies": {
-          "DAL.Interfaces": "1.0.0",
           "Entities": "1.0.0",
           "Microsoft.EntityFrameworkCore": "8.0.0-preview.2.23128.3"
         },
         "runtime": {
           "DAL.dll": {}
-        }
-      },
-      "DAL.Interfaces/1.0.0": {
-        "dependencies": {
-          "Entities": "1.0.0"
-        },
-        "runtime": {
-          "DAL.Interfaces.dll": {}
         }
       },
       "Entities/1.0.0": {
@@ -456,17 +447,12 @@
       "path": "swashbuckle.aspnetcore.swaggerui/6.4.0",
       "hashPath": "swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512"
     },
-    "BLL.Interfaces/1.0.0": {
+    "BLL/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
     "DAL/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "DAL.Interfaces/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
