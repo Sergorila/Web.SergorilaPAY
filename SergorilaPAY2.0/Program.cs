@@ -30,21 +30,18 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddLogging();  
-
-//var options = new DbContextOptionsBuilder<NpgsqlContext>();
-//options.UseNpgsql(config?.ConnectionString);
+builder.Services.AddLogging();
 
 builder.Services.AddScoped<IUserDao, UserDao>();
-//builder.Services.AddScoped<ICategoryDao, CategoryDao>();
-//builder.Services.AddScoped<IProductDao, ProductDao>();
-//builder.Services.AddScoped<IOrderDao, OrderDao>();
-//builder.Services.AddScoped<IImgDao, ImgDao>();
+builder.Services.AddScoped<ICategoryDao, CategoryDao>();
+builder.Services.AddScoped<IProductDao, ProductDao>();
+builder.Services.AddScoped<IOrderDao, OrderDao>();
+builder.Services.AddScoped<IImgDao, ImgDao>();
 builder.Services.AddScoped<IUserLogic, UserLogic>();
-//builder.Services.AddScoped<ICategoryLogic, CategoryLogic>();
-//builder.Services.AddScoped<IProductLogic, ProductLogic>();
-//builder.Services.AddScoped<IOrderLogic, OrderLogic>();
-//builder.Services.AddScoped<IImgLogic, ImgLogic>();
+builder.Services.AddScoped<ICategoryLogic, CategoryLogic>();
+builder.Services.AddScoped<IProductLogic, ProductLogic>();
+builder.Services.AddScoped<IOrderLogic, OrderLogic>();
+builder.Services.AddScoped<IImgLogic, ImgLogic>();
 
 builder.Services.AddControllers().AddJsonOptions(options =>
     {
@@ -62,6 +59,12 @@ builder.Services.AddDbContext<NpgsqlContext>(
     });
 
 var app = builder.Build();
+
+//var options = new DbContextOptionsBuilder<NpgsqlContext>();
+//options.UseNpgsql(config?.ConnectionString);
+
+//var context = new NpgsqlContext(options.Options);
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

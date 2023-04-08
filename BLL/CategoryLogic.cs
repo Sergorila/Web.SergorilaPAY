@@ -83,4 +83,37 @@ public class CategoryLogic : BaseLogic, ICategoryLogic
             throw;
         }
     }
+
+    public async Task AddProductCategoryAsync(int id, Product product)
+    {
+        try
+        {
+            Logger.LogInformation("Trying add product to category by ID: {Id}", id);
+            await _dao.AddProductCategoryAsync(id, product);
+            Logger.LogInformation("Complete adding product to category by ID: {Id}", id);
+        }
+        catch (Exception ex)
+        {
+            Logger.LogError(ex, 
+                "Error while radding product to category by ID: {Id}", id);
+            throw;
+        }
+    }
+
+    public async Task UpdateCategoryAsync(Category category)
+    {
+        try
+        {
+            Logger.LogInformation("Trying update category: {Id}", category.Id);
+            
+            await _dao.UpdateCategoryAsync(category);
+            Logger.LogInformation("Complete updating category: {Id}", category.Id);
+        }
+        catch (Exception ex)
+        {
+            Logger.LogError(ex, 
+                "Error while updating category: {Id}", category.Id);
+            throw;
+        }
+    }
 }

@@ -9,6 +9,7 @@ public sealed class NpgsqlContext : DbContext
     public NpgsqlContext(DbContextOptions<NpgsqlContext> options) 
             : base(options)
     {
+        //Database.EnsureDeleted();
         Database.EnsureCreated();
     }
     
@@ -49,6 +50,9 @@ public sealed class NpgsqlContext : DbContext
             var order = modelBuilder.Entity<Order>();
             
             order.HasKey(i => i.Id);
+            order.Property(i => i.Status).IsRequired();
+            order.Property(i => i.Sum).IsRequired();
+            order.Property(i => i.Address).IsRequired();
             order.HasMany(s => s.Products)
                 .WithMany(i => i.Orders);
             order.HasOne(s => s.User)

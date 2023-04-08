@@ -42,11 +42,27 @@ public class CategoryDao : BaseDao, ICategoryDao
         await DbContext.SaveChangesAsync();
     }
 
+    public async Task AddProductCategoryAsync(int id, Product product)
+    {
+        var category = await GetCategoryItemAsync(id);
+        var categoryProducts = category.Elems.ToList();
+        categoryProducts.Add(product);
+        category.Elems = categoryProducts;
+        DbContext.Categories.Update(category);
+        await DbContext.SaveChangesAsync();
+    }
+
     public async Task<bool> RemoveCategoryAsync(int id)
     {
         var category = await GetCategoryItemAsync(id);
         DbContext.Categories.Remove(category);
         var removedCount = await DbContext.SaveChangesAsync();
         return removedCount != 0;
+    }
+
+    public async Task UpdateCategoryAsync(Category category)
+    {
+        DbContext.Categories.Update(category);
+        await DbContext.SaveChangesAsync();
     }
 }

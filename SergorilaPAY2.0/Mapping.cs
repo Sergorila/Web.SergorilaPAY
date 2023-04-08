@@ -9,6 +9,9 @@ public class Mapping : Profile
     public Mapping()
     {
         CreateMap<UserView, User>();
+        CreateMap<ProductView, Product>();
+        CreateMap<OrderView, Order>();
+        CreateMap<CategoryView, Category>();
     }
     
 }
