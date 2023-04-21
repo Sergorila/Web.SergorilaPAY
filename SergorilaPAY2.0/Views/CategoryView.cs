@@ -14,5 +14,4 @@ public class CategoryView
     [Required]
     public string? Title { get; set; }
     
-    public IEnumerable<Product>? Elems { get; set; }
 }

@@ -9,21 +9,21 @@ public enum Status
 
 public class Order
 {
-    
+    [Key]
     public int Id { get; set; }
-    
-    [NotMapped]
-    public IEnumerable<Product> Products { get; set; }
     
     [Required]
     public int Sum { get; set; }
+    
     [Required]
     public Status Status { get; set; }
+    
     [Required]
     public string Address { get; set; }
-    [Required]
-    public int UserId { get; set; }
+
+    [ForeignKey(nameof(User))]
+    public int? UserId { get; set; }
     
-    [NotMapped]
-    public User User { get; set; }
+    public User? User { get; set; }
+    public IEnumerable<Product>? Products { get; set; }
 }

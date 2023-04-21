@@ -36,12 +36,10 @@ builder.Services.AddScoped<IUserDao, UserDao>();
 builder.Services.AddScoped<ICategoryDao, CategoryDao>();
 builder.Services.AddScoped<IProductDao, ProductDao>();
 builder.Services.AddScoped<IOrderDao, OrderDao>();
-builder.Services.AddScoped<IImgDao, ImgDao>();
 builder.Services.AddScoped<IUserLogic, UserLogic>();
 builder.Services.AddScoped<ICategoryLogic, CategoryLogic>();
 builder.Services.AddScoped<IProductLogic, ProductLogic>();
 builder.Services.AddScoped<IOrderLogic, OrderLogic>();
-builder.Services.AddScoped<IImgLogic, ImgLogic>();
 
 builder.Services.AddControllers().AddJsonOptions(options =>
     {
@@ -60,11 +58,14 @@ builder.Services.AddDbContext<NpgsqlContext>(
 
 var app = builder.Build();
 
-//var options = new DbContextOptionsBuilder<NpgsqlContext>();
-//options.UseNpgsql(config?.ConnectionString);
+var options = new DbContextOptionsBuilder<NpgsqlContext>();
+options.UseNpgsql(config?.ConnectionString);
 
-//var context = new NpgsqlContext(options.Options);
-
+var context = new NpgsqlContext(options.Options);
+var products = context.Products;
+var cat = context.Categories;
+var us = context.Users;
+var ord = context.Orders;
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

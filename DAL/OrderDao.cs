@@ -22,31 +22,41 @@ public class OrderDao : BaseDao, IOrderDao
     public async Task<bool> CheckOrderAsync(int id)
     {
         var order = await DbContext.Orders
-            .FirstOrDefaultAsync(u => 
-                u.Id == id);
+            .FirstOrDefaultAsync(o => 
+                o.Id == id);
         
         return order != null;
     }
 
-    public async Task AddProductAsync(int id, Product product)
+    public async Task AddProductAsync(int id, int idProduct)
     {
-        var order = await GetOrderAsync(id);
-        var orderProducts = order.Products.ToList();
-        orderProducts.Add(product);
-        order.Products = orderProducts;
-        DbContext.Orders.Update(order);
+        var product = DbContext.Products
+            .FirstOrDefault(p => p.Id == idProduct);
+        product.OrderId = id;
+        DbContext.Products.Update(product);
         await DbContext.SaveChangesAsync();
     }
 
     public async Task AddOrderAsync(Order order)
     {
-        await DbContext.AddAsync(order);
+        var user = DbContext.Users
+            .FirstOrDefault(u => u.Id == order.UserId);
+        order.UserId = user.Id;
+        order.User = user;
+        await DbContext.Orders.AddAsync(order);
         await DbContext.SaveChangesAsync();
     }
 
     public async Task<bool> RemoveOrderAsync(int id)
     {
         var order = await GetOrderAsync(id);
+        foreach (var product in DbContext.Products)
+        {
+            if (product.OrderId == id)
+            {
+                product.OrderId = null;
+            }
+        }
         DbContext.Orders.Remove(order);
         var removedCount = await DbContext.SaveChangesAsync();
         return removedCount != 0;
@@ -56,5 +66,23 @@ public class OrderDao : BaseDao, IOrderDao
     {
         DbContext.Orders.Update(order);
         await DbContext.SaveChangesAsync();
+    }
+
+    public async IAsyncEnumerable<Product> GetOrderItemsAsync(int id, int offset, int limit)
+    {
+        var currentOrder = await DbContext.Orders
+                    .Where(c => c.Id == id).Include(c => c.Products).FirstOrDefaultAsync();
+                var elems = currentOrder?.Products
+                    .Skip(offset).Take(limit);
+                
+                if (elems == null)
+                {
+                    yield break;
+                }
+                
+                foreach (var item in elems)
+                {
+                    yield return item;
+                }
     }
 }

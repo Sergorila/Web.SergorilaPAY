@@ -7,10 +7,7 @@ namespace SergorilaPAY2._0.Views;
 public class OrderView
 {
     public int Id { get; set; }
-    
-    [NotMapped]
-    public IEnumerable<Product> Products { get; set; }
-    
+
     [Required]
     public int Sum { get; set; }
     
@@ -22,4 +19,5 @@ public class OrderView
     
     [Required]
     public int UserId { get; set; }
+    
 }

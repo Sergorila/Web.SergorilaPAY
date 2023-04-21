@@ -18,4 +18,8 @@ public class ProductView
     
     [Required]
     public string? Description { get; set; }
+    
+    public int? CategoryId { get; set; }
+    
+    public int? OrderId { get; set; }
 }

@@ -20,8 +20,8 @@ public class CategoryDao : BaseDao, ICategoryDao
 
     public async IAsyncEnumerable<Product> GetCategoryItemsAsync(int id, int offset, int limit)
     {
-        var currentCategory = DbContext.Categories
-            .FirstOrDefault(c => c.Id == id);
+        var currentCategory = await DbContext.Categories
+            .Where(c => c.Id == id).Include(c => c.Elems).FirstOrDefaultAsync();
         var elems = currentCategory?.Elems
             .Skip(offset).Take(limit);
         
@@ -42,19 +42,25 @@ public class CategoryDao : BaseDao, ICategoryDao
         await DbContext.SaveChangesAsync();
     }
 
-    public async Task AddProductCategoryAsync(int id, Product product)
+    public async Task AddProductAsync(int id, int idProduct)
     {
-        var category = await GetCategoryItemAsync(id);
-        var categoryProducts = category.Elems.ToList();
-        categoryProducts.Add(product);
-        category.Elems = categoryProducts;
-        DbContext.Categories.Update(category);
+        var product = DbContext.Products
+            .FirstOrDefault(p => p.Id == idProduct);
+        product.CategoryId = id;
+        DbContext.Products.Update(product);
         await DbContext.SaveChangesAsync();
     }
 
     public async Task<bool> RemoveCategoryAsync(int id)
     {
         var category = await GetCategoryItemAsync(id);
+        foreach (var product in DbContext.Products)
+        {
+            if (product.CategoryId == id)
+            {
+                product.CategoryId = null;
+            }
+        }
         DbContext.Categories.Remove(category);
         var removedCount = await DbContext.SaveChangesAsync();
         return removedCount != 0;

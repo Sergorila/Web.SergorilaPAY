@@ -90,20 +90,6 @@ public class CategoryController : ControllerBase
         }
     }
     
-    [HttpPost]
-    [Route("api/addcategoryitem")]
-    public async Task<IActionResult> AddGategoryItem(int id, ProductView product)
-    {
-        try
-        {
-            await _categoryLogic.AddProductCategoryAsync(id, _mapper.Map<Product>(product));
-            return Ok();
-        }
-        catch (Exception)
-        {
-            return BadRequest("Bad request.");
-        }
-    }
     
     [HttpPut]
     public async Task<IActionResult> UpdateCategory(CategoryView category)
@@ -129,6 +115,21 @@ public class CategoryController : ControllerBase
         else
         {
             return BadRequest("ObjectNotFound");
+        }
+    }
+    
+    [HttpPost]
+    [Route("/api/addproductcategory")]
+    public async Task<IActionResult> AddProductOrder(int id, int idProduct)
+    {
+        try
+        {
+            await _categoryLogic.AddProductAsync(id, idProduct);
+            return Ok();
+        }
+        catch (Exception)
+        {
+            return BadRequest("Bad request.");
         }
     }
 }

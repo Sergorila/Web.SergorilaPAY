@@ -83,22 +83,7 @@ public class CategoryLogic : BaseLogic, ICategoryLogic
             throw;
         }
     }
-
-    public async Task AddProductCategoryAsync(int id, Product product)
-    {
-        try
-        {
-            Logger.LogInformation("Trying add product to category by ID: {Id}", id);
-            await _dao.AddProductCategoryAsync(id, product);
-            Logger.LogInformation("Complete adding product to category by ID: {Id}", id);
-        }
-        catch (Exception ex)
-        {
-            Logger.LogError(ex, 
-                "Error while radding product to category by ID: {Id}", id);
-            throw;
-        }
-    }
+    
 
     public async Task UpdateCategoryAsync(Category category)
     {
@@ -113,6 +98,21 @@ public class CategoryLogic : BaseLogic, ICategoryLogic
         {
             Logger.LogError(ex, 
                 "Error while updating category: {Id}", category.Id);
+            throw;
+        }
+    }
+
+    public async Task AddProductAsync(int id, int idProduct)
+    {
+        try
+        {
+            Logger.LogInformation("Trying add product to category: {Id}", id);
+            await _dao.AddProductAsync(id, idProduct);
+            Logger.LogInformation("Complete adding product to category: {Id}", id);
+        }
+        catch (Exception ex)
+        {
+            Logger.LogError(ex, "Error while adding product to category: {Id}", id);
             throw;
         }
     }

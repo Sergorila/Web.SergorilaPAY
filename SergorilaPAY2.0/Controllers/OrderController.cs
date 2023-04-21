@@ -28,8 +28,7 @@ public class OrderController : ControllerBase
             var order = await _orderLogic.GetOrderAsync(id);
             if (order != null)
             {
-                var res = _mapper.Map<Product>(order);
-                return Ok(res);
+                return Ok(order);
             }
             else
             {
@@ -64,11 +63,11 @@ public class OrderController : ControllerBase
     
     [HttpPost]
     [Route("/api/addproductorder")]
-    public async Task<IActionResult> AddProductOrder(int id, ProductView product)
+    public async Task<IActionResult> AddProductOrder(int id, int idProduct)
     {
         try
         {
-            await _orderLogic.AddProductAsync(id, _mapper.Map<Product>(product));
+            await _orderLogic.AddProductAsync(id, idProduct);
             return Ok();
         }
         catch (Exception)
@@ -123,6 +122,33 @@ public class OrderController : ControllerBase
         else
         {
             return BadRequest("ObjectNotFound");
+        }
+    }
+    
+    [HttpGet]
+    [Route("api/getorderitems")]
+    public async Task<IActionResult> GetOrderItems(int id, int offset, int limit)
+    {
+        try
+        {
+            var order = _orderLogic.GetOrderItemsAsync(id, offset, limit);
+            if (order != null)
+            {
+                return Ok(order);
+            }
+            else
+            {
+                return BadRequest();
+            }
+        }
+        catch (KeyNotFoundException ex)
+        {
+            return BadRequest($"{ex.GetType()}: {ex.Message}");
+        }
+        catch (Exception)
+        {
+            IActionResult badRequestObjectResult = BadRequest("Bad request.");
+            return badRequestObjectResult;
         }
     }
 }

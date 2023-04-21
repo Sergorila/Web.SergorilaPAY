@@ -50,12 +50,12 @@ public class OrderLogic : BaseLogic, IOrderLogic
         }
     }
 
-    public async Task AddProductAsync(int id, Product product)
+    public async Task AddProductAsync(int id, int idProduct)
     {
         try
         {
             Logger.LogInformation("Trying add product to order: {Id}", id);
-            await _dao.AddProductAsync(id, product);
+            await _dao.AddProductAsync(id, idProduct);
             Logger.LogInformation("Complete adding product to order: {Id}", id);
         }
         catch (Exception ex)
@@ -110,6 +110,25 @@ public class OrderLogic : BaseLogic, IOrderLogic
         {
             Logger.LogError(ex, 
                 "Error while updating order: {Id}", order.Id);
+            throw;
+        }
+    }
+
+    public IAsyncEnumerable<Product> GetOrderItemsAsync(int id, int offset, int limit)
+    {
+        try
+        {
+            Logger.LogInformation("Trying get order items by ID: {Id}", id);
+            
+            var res = _dao.GetOrderItemsAsync(id, offset, limit);
+            
+            Logger.LogInformation("Compete getting order items by ID: {Id}", id);
+            return res;
+        }
+        catch (Exception ex)
+        {
+            Logger.LogError(ex, 
+                "Error while getting order by items ID: {Id}", id);
             throw;
         }
     }
