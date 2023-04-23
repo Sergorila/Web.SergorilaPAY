@@ -99,4 +99,23 @@ public class UserLogic : BaseLogic, IUserLogic
             throw;
         }
     }
+
+    public async Task<User> GetUserTGAsync(string tgId)
+    {
+        try
+        {
+            Logger.LogInformation("Trying get user by tgID: {Id}", tgId);
+            
+            var res = await _dao.GetUserTGAsync(tgId);
+            
+            Logger.LogInformation("Compete getting user by tgID: {Id}", tgId);
+            return res;
+        }
+        catch (Exception ex)
+        {
+            Logger.LogError(ex, 
+                "Error while getting user by tgID: {Id}", tgId);
+            throw;
+        }
+    }
 }

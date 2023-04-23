@@ -52,3 +52,5 @@ C:\Users\Sergey\RiderProjects\SergorilaPAY\SergorilaPAY2.0\obj\Debug\net7.0\ref\
 C:\Users\Sergey\RiderProjects\SergorilaPAY\SergorilaPAY2.0\bin\Debug\net7.0\AutoMapper.dll
 C:\Users\Sergey\RiderProjects\SergorilaPAY\SergorilaPAY2.0\bin\Debug\net7.0\BLL.dll
 C:\Users\Sergey\RiderProjects\SergorilaPAY\SergorilaPAY2.0\bin\Debug\net7.0\BLL.pdb
+C:\Users\Sergey\RiderProjects\SergorilaPAY\SergorilaPAY2.0\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\Users\Sergey\RiderProjects\SergorilaPAY\SergorilaPAY2.0\bin\Debug\net7.0\Telegram.Bot.dll

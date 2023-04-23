@@ -8,4 +8,5 @@ public interface IUserDao
     Task AddUserAsync(User user);
     Task<bool> RemoveUserAsync(int id);
     Task UpdateUserAsync(User user);
+    Task<User> GetUserTGAsync(string tgId);
 }

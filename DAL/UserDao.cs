@@ -48,4 +48,12 @@ public class UserDao : BaseDao, IUserDao
         DbContext.Users.Update(user);
         await DbContext.SaveChangesAsync();
     }
+
+    public async Task<User> GetUserTGAsync(string tgId)
+    {
+        var user = await DbContext.Users
+            .FirstOrDefaultAsync(u => u.TelegramID == tgId);
+        
+        return user;
+    }
 }

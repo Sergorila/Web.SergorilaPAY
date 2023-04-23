@@ -56,6 +56,9 @@ builder.Services.AddDbContext<NpgsqlContext>(
             .UseNpgsql(config?.ConnectionString);
     });
 
+builder.Services.AddScoped<IScopedService, MyScopedService>();
+builder.Services.AddHostedService<BackgroundWorkerService>();
+
 var app = builder.Build();
 
 var options = new DbContextOptionsBuilder<NpgsqlContext>();
