@@ -10,4 +10,5 @@ public interface IUserLogic
     Task<bool> RemoveUserAsync(int id);
     Task UpdateUserAsync(User user);
     Task<User> GetUserTGAsync(string tgId);
+    Task<User> GetUserByLoginAsync(string login);
 }

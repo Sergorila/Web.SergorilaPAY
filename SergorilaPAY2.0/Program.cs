@@ -1,3 +1,5 @@
+using Hangfire;
+using Hangfire.PostgreSql;
 using System.Text.Json.Serialization;
 using AutoMapper;
 using BLL;
@@ -23,6 +25,10 @@ var mappingConfig = new MapperConfiguration(mc =>
 
 IMapper mapper = mappingConfig.CreateMapper();
 builder.Services.AddSingleton(mapper);
+builder.Services.AddHangfire(conf =>
+    conf.UsePostgreSqlStorage(config?.ConnectionString));
+
+//builder.Services.AddHangfireServer();
 
 // Add services to the container.
 
@@ -82,5 +88,7 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.UseHangfireDashboard();
 
 app.Run();

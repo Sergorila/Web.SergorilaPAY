@@ -118,4 +118,23 @@ public class UserLogic : BaseLogic, IUserLogic
             throw;
         }
     }
+
+    public async Task<User> GetUserByLoginAsync(string login)
+    {
+        try
+        {
+            Logger.LogInformation("Trying get user by login: {login}", login);
+            
+            var res = await _dao.GetUserByLoginAsync(login);
+            
+            Logger.LogInformation("Compete getting user by login: {login}", login);
+            return res;
+        }
+        catch (Exception ex)
+        {
+            Logger.LogError(ex, 
+                "Error while getting user by login: {login}", login);
+            throw;
+        }
+    }
 }

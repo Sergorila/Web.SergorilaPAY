@@ -1,4 +1,6 @@
-﻿using Entities;
+﻿using System.Security.Cryptography;
+using System.Text;
+using Entities;
 using DAL.Interfaces;
 using Microsoft.Extensions.Options;
 using Telegram.Bot;
@@ -14,8 +16,6 @@ namespace SergorilaPAY2._0
         private readonly string _token = "6266328958:AAF42k8X_XVXRE-Y9n4RfHth3tZ-PIEQ_7o";
         
         private string PreviousMessage { get; set; }
-
-        private const string SALT = "AMOGU$AB1GU$SUG0M4";
 
         public TelegramBot(IUserDao userDao)
         {
@@ -53,32 +53,40 @@ namespace SergorilaPAY2._0
                 switch (message)
                 {
                     case "/getPassword":
-                        var resultPassword = "";
+
+                        RNGCryptoServiceProvider cryptRNG = new RNGCryptoServiceProvider();
+                        byte[] tokenBuffer = new byte[15];
+                        cryptRNG.GetBytes(tokenBuffer);
+                        var resultPassword = Convert.ToBase64String(tokenBuffer);
+
+                        tgClient.SendTextMessageAsync(
+                            chatId, 
+                            $"{userId}, Ваш пароль:", 
+                            cancellationToken: token);
                         
-                        var bytes = new byte[25];
-                        rnd.NextBytes(bytes);
-                        
-                        foreach (var c in bytes)
-                        {
-                            resultPassword += (char)(c % 26 + 94);
-                        }
-                        
-                        tgClient.SendTextMessageAsync(chatId, resultPassword, cancellationToken: token);
+                        tgClient.SendTextMessageAsync(
+                            chatId, 
+                            resultPassword, 
+                            cancellationToken: token);
 
                         user.Password = resultPassword;
                         _userDao.UpdateUserAsync(user);
 
                         break;
                     default:
-                        tgClient.SendTextMessageAsync(chatId, 
+                        tgClient.SendTextMessageAsync(
+                            chatId, 
                             "Введите /getPassword",
                             cancellationToken: token);
+                        
                         break;
                 }
             }
             else 
             {
-                tgClient.SendTextMessageAsync(chatId, "Вас нет в базе", cancellationToken: token);
+                tgClient.SendTextMessageAsync(chatId, 
+                    "Вас нет в базе, пожалуйста, пройдите регистрацию", 
+                    cancellationToken: token);
             }
         }
 
@@ -88,7 +96,7 @@ namespace SergorilaPAY2._0
             CancellationToken token)
         {
             _logger.LogError(
-                "{ExceptionType}: There's some error. {ExceptionMessage}",
+                "{ExceptionType}: Ошиб ОЧКА. {ExceptionMessage}",
                 ex.GetType(),
                 ex.Message);
         }

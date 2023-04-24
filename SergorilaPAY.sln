@@ -14,6 +14,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{F
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SergorilaPAY2.0", "SergorilaPAY2.0\SergorilaPAY2.0.csproj", "{8476C61D-9E52-4045-94C9-889F8AFAEBE7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitMQConsumer", "RabbitMQConsumer\RabbitMQConsumer.csproj", "{C17F6186-1E92-4E81-B6B4-FE77C539931E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,6 +38,10 @@ Global
 		{8476C61D-9E52-4045-94C9-889F8AFAEBE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8476C61D-9E52-4045-94C9-889F8AFAEBE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8476C61D-9E52-4045-94C9-889F8AFAEBE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C17F6186-1E92-4E81-B6B4-FE77C539931E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C17F6186-1E92-4E81-B6B4-FE77C539931E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C17F6186-1E92-4E81-B6B4-FE77C539931E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C17F6186-1E92-4E81-B6B4-FE77C539931E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{2060AA2D-9EBB-4EBD-8DC1-57F78059B7F4} = {0F39D52D-2C6B-4A5D-A116-36A7424EBE1F}

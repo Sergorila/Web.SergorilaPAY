@@ -18,6 +18,14 @@ public class UserDao : BaseDao, IUserDao
         return user;
     }
 
+    public async Task<User> GetUserByLoginAsync(string login)
+    {
+        var user = await DbContext.Users
+            .FirstOrDefaultAsync(u => u.Login == login);
+        
+        return user;
+    }
+
     public async Task<bool> CheckUserAsync(string login, string password)
     {
         var user = await DbContext.Users

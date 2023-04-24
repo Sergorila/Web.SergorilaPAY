@@ -2,6 +2,7 @@
 using BLL.Interfaces;
 using Entities;
 using Microsoft.AspNetCore.Mvc;
+using SergorilaPAY2._0.RabbitMQ;
 using SergorilaPAY2._0.Views;
 
 namespace SergorilaPAY2._0.Controllers;
@@ -53,6 +54,7 @@ public class OrderController : ControllerBase
         try
         {
             await _orderLogic.AddOrderAsync(_mapper.Map<Order>(order));
+            SendOrderRabbitMQ.SendOrderWhenCreated(order);
             return Ok();
         }
         catch (Exception)
