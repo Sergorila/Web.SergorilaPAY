@@ -28,8 +28,6 @@ builder.Services.AddSingleton(mapper);
 builder.Services.AddHangfire(conf =>
     conf.UsePostgreSqlStorage(config?.ConnectionString));
 
-//builder.Services.AddHangfireServer();
-
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -90,5 +88,7 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.UseHangfireDashboard();
+
+app.UseHangfireServer();
 
 app.Run();

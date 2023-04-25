@@ -61,12 +61,8 @@ namespace SergorilaPAY2._0
 
                         tgClient.SendTextMessageAsync(
                             chatId, 
-                            $"{userId}, Ваш пароль:", 
-                            cancellationToken: token);
-                        
-                        tgClient.SendTextMessageAsync(
-                            chatId, 
-                            resultPassword, 
+                            $"{userId}, Ваш пароль: " +
+                            $"{resultPassword}", 
                             cancellationToken: token);
 
                         user.Password = resultPassword;
