@@ -1,7 +1,7 @@
 ﻿using DAL.DBContext;
 namespace DAL;
 
-public class BaseDao : IAsyncDisposable
+public class BaseDao : IAsyncDisposable, IDisposable
 {
     protected readonly NpgsqlContext DbContext;
 
@@ -13,5 +13,10 @@ public class BaseDao : IAsyncDisposable
     public async ValueTask DisposeAsync()
     {
         await DbContext.DisposeAsync();
+    }
+
+    public void Dispose()
+    {
+        DbContext.Dispose();
     }
 }

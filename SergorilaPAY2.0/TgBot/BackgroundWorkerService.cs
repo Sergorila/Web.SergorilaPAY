@@ -17,22 +17,15 @@ public class BackgroundWorkerService : BackgroundService
 
     protected async override Task ExecuteAsync(CancellationToken stoppingToken)
     {
-        if (!await WaitForAppStartup(_lifetime, stoppingToken))
+        using (var scope = _serviceProvider.CreateScope())
         {
-            return;
-        }
-        while (!stoppingToken.IsCancellationRequested)
-        {
-            using (var scope = _serviceProvider.CreateScope())
-            {
-                var userdao = scope.ServiceProvider.GetRequiredService<IUserDao>();
-                var telegramBot = new TelegramBot(userdao);
+            var userdao = scope.ServiceProvider.GetRequiredService<IUserDao>();
+            var telegramBot = new TelegramBot(userdao);
                 
-                telegramBot.StartPolling();
-            }
-            
-            await Task.Delay(1000, stoppingToken);
+            telegramBot.StartPolling();
         }
+            
+        //await Task.Delay(1000, stoppingToken);
     }
     
     static async Task<bool> WaitForAppStartup(IHostApplicationLifetime lifetime, CancellationToken stoppingToken)

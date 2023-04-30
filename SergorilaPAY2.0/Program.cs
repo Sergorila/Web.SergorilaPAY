@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using DAL.DBContext;
 using DAL.Interfaces;
 using SergorilaPAY2._0;
+using SergorilaPAY2._0.ExtensionMethods;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -36,7 +37,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddLogging();
 
-builder.Services.AddScoped<IUserDao, UserDao>();
+builder.Services.AddScopedSingleton<IUserDao, UserDao>();
 builder.Services.AddScoped<ICategoryDao, CategoryDao>();
 builder.Services.AddScoped<IProductDao, ProductDao>();
 builder.Services.AddScoped<IOrderDao, OrderDao>();
@@ -60,7 +61,7 @@ builder.Services.AddDbContext<NpgsqlContext>(
             .UseNpgsql(config?.ConnectionString);
     });
 
-builder.Services.AddScoped<IScopedService, MyScopedService>();
+//builder.Services.AddScoped<IScopedService, MyScopedService>();
 builder.Services.AddHostedService<BackgroundWorkerService>();
 
 var app = builder.Build();
@@ -74,12 +75,8 @@ var cat = context.Categories;
 var us = context.Users;
 var ord = context.Orders;
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
 
