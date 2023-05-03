@@ -1,0 +1,15 @@
+C:\Users\Sergey\RiderProjects\SergorilaPAY\BLL.Interfaces\bin\Debug\net7.0\BLL.Interfaces.deps.json
+C:\Users\Sergey\RiderProjects\SergorilaPAY\BLL.Interfaces\bin\Debug\net7.0\BLL.Interfaces.dll
+C:\Users\Sergey\RiderProjects\SergorilaPAY\BLL.Interfaces\bin\Debug\net7.0\BLL.Interfaces.pdb
+C:\Users\Sergey\RiderProjects\SergorilaPAY\BLL.Interfaces\bin\Debug\net7.0\Entities.dll
+C:\Users\Sergey\RiderProjects\SergorilaPAY\BLL.Interfaces\bin\Debug\net7.0\Entities.pdb
+C:\Users\Sergey\RiderProjects\SergorilaPAY\BLL.Interfaces\obj\Debug\net7.0\BLL.Interfaces.csproj.AssemblyReference.cache
+C:\Users\Sergey\RiderProjects\SergorilaPAY\BLL.Interfaces\obj\Debug\net7.0\BLL.Interfaces.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Sergey\RiderProjects\SergorilaPAY\BLL.Interfaces\obj\Debug\net7.0\BLL.Interfaces.AssemblyInfoInputs.cache
+C:\Users\Sergey\RiderProjects\SergorilaPAY\BLL.Interfaces\obj\Debug\net7.0\BLL.Interfaces.AssemblyInfo.cs
+C:\Users\Sergey\RiderProjects\SergorilaPAY\BLL.Interfaces\obj\Debug\net7.0\BLL.Interfaces.csproj.CoreCompileInputs.cache
+C:\Users\Sergey\RiderProjects\SergorilaPAY\BLL.Interfaces\obj\Debug\net7.0\BLL.Interfaces.csproj.CopyComplete
+C:\Users\Sergey\RiderProjects\SergorilaPAY\BLL.Interfaces\obj\Debug\net7.0\BLL.Interfaces.dll
+C:\Users\Sergey\RiderProjects\SergorilaPAY\BLL.Interfaces\obj\Debug\net7.0\refint\BLL.Interfaces.dll
+C:\Users\Sergey\RiderProjects\SergorilaPAY\BLL.Interfaces\obj\Debug\net7.0\BLL.Interfaces.pdb
+C:\Users\Sergey\RiderProjects\SergorilaPAY\BLL.Interfaces\obj\Debug\net7.0\ref\BLL.Interfaces.dll

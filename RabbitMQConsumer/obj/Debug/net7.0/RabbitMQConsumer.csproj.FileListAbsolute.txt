@@ -1,0 +1,17 @@
+C:\Users\Sergey\RiderProjects\SergorilaPAY\RabbitMQConsumer\bin\Debug\net7.0\RabbitMQConsumer.exe
+C:\Users\Sergey\RiderProjects\SergorilaPAY\RabbitMQConsumer\bin\Debug\net7.0\RabbitMQConsumer.deps.json
+C:\Users\Sergey\RiderProjects\SergorilaPAY\RabbitMQConsumer\bin\Debug\net7.0\RabbitMQConsumer.runtimeconfig.json
+C:\Users\Sergey\RiderProjects\SergorilaPAY\RabbitMQConsumer\bin\Debug\net7.0\RabbitMQConsumer.dll
+C:\Users\Sergey\RiderProjects\SergorilaPAY\RabbitMQConsumer\bin\Debug\net7.0\RabbitMQConsumer.pdb
+C:\Users\Sergey\RiderProjects\SergorilaPAY\RabbitMQConsumer\bin\Debug\net7.0\RabbitMQ.Client.dll
+C:\Users\Sergey\RiderProjects\SergorilaPAY\RabbitMQConsumer\obj\Debug\net7.0\RabbitMQConsumer.csproj.AssemblyReference.cache
+C:\Users\Sergey\RiderProjects\SergorilaPAY\RabbitMQConsumer\obj\Debug\net7.0\RabbitMQConsumer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Sergey\RiderProjects\SergorilaPAY\RabbitMQConsumer\obj\Debug\net7.0\RabbitMQConsumer.AssemblyInfoInputs.cache
+C:\Users\Sergey\RiderProjects\SergorilaPAY\RabbitMQConsumer\obj\Debug\net7.0\RabbitMQConsumer.AssemblyInfo.cs
+C:\Users\Sergey\RiderProjects\SergorilaPAY\RabbitMQConsumer\obj\Debug\net7.0\RabbitMQConsumer.csproj.CoreCompileInputs.cache
+C:\Users\Sergey\RiderProjects\SergorilaPAY\RabbitMQConsumer\obj\Debug\net7.0\RabbitMQConsumer.csproj.CopyComplete
+C:\Users\Sergey\RiderProjects\SergorilaPAY\RabbitMQConsumer\obj\Debug\net7.0\RabbitMQConsumer.dll
+C:\Users\Sergey\RiderProjects\SergorilaPAY\RabbitMQConsumer\obj\Debug\net7.0\refint\RabbitMQConsumer.dll
+C:\Users\Sergey\RiderProjects\SergorilaPAY\RabbitMQConsumer\obj\Debug\net7.0\RabbitMQConsumer.pdb
+C:\Users\Sergey\RiderProjects\SergorilaPAY\RabbitMQConsumer\obj\Debug\net7.0\RabbitMQConsumer.genruntimeconfig.cache
+C:\Users\Sergey\RiderProjects\SergorilaPAY\RabbitMQConsumer\obj\Debug\net7.0\ref\RabbitMQConsumer.dll

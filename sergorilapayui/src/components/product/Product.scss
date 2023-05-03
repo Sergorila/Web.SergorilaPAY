@@ -1,0 +1,23 @@
+.contentProduct {
+    width: 200px;
+    height: 350px;
+    border-radius: 20px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.productImg {
+    width: 120px;
+    height: 90px;
+}
+
+.titleProduct {
+    word-wrap: break-word;
+}
+
+.descProduct {
+    word-wrap: break-word;
+}

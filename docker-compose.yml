@@ -61,14 +61,12 @@ services:
     depends_on:
       - rabbitmq3
 
-  # frontend:
-  #   build:
-  #     context: .
-  #     dockerfile: animeShopUI/Dockerfile
-  #   ports:
-  #     - "80:4200"
-  #   depends_on:
-  #     - telegram_bot
+  frontend:
+    build:
+      context: .
+      dockerfile: sergorilapayui/Dockerfile
+    ports:
+      - "80:3000"
 
 volumes:
   redis_data:
