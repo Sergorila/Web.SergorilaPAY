@@ -75,6 +75,8 @@ var cat = context.Categories;
 var us = context.Users;
 var ord = context.Orders;
 
+app.UseCors(builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+
 app.UseSwagger();
 app.UseSwaggerUI();
 

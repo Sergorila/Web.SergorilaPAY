@@ -49,6 +49,33 @@ public class CategoryController : ControllerBase
     }
     
     [HttpGet]
+    [Route("api/getcategories")]
+    public IActionResult GetCategories()
+    {
+        try
+        {
+            var categories = _categoryLogic.GetCategoriesAsync();
+            if (categories != null)
+            {
+                return Ok(categories);
+            }
+            else
+            {
+                return BadRequest();
+            }
+        }
+        catch (KeyNotFoundException ex)
+        {
+            return BadRequest($"{ex.GetType()}: {ex.Message}");
+        }
+        catch (Exception)
+        {
+            IActionResult badRequestObjectResult = BadRequest("Bad request.");
+            return badRequestObjectResult;
+        }
+    }
+    
+    [HttpGet]
     [Route("api/getcategoryitems")]
     public async Task<IActionResult> GetCategoryItems(int id, int offset, int limit)
     {

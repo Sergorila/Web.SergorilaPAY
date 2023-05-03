@@ -10,4 +10,5 @@ public interface ICategoryLogic
     Task<bool> RemoveCategoryAsync(int id);
     Task UpdateCategoryAsync(Category category);
     Task AddProductAsync(int id, int idProduct);
+    IEnumerable<Category> GetCategoriesAsync();
 }

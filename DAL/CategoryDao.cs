@@ -18,6 +18,11 @@ public class CategoryDao : BaseDao, ICategoryDao
                 return category;
     }
 
+    public IEnumerable<Category> GetCategoriesAsync()
+    {
+        return DbContext.Categories.ToList();
+    }
+
     public async IAsyncEnumerable<Product> GetCategoryItemsAsync(int id, int offset, int limit)
     {
         var currentCategory = await DbContext.Categories

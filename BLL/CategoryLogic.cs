@@ -116,4 +116,23 @@ public class CategoryLogic : BaseLogic, ICategoryLogic
             throw;
         }
     }
+
+    public IEnumerable<Category> GetCategoriesAsync()
+    {
+        try
+        {
+            Logger.LogInformation("Trying get categories");
+
+            var res = _dao.GetCategoriesAsync();
+            
+            Logger.LogInformation("Compete getting categories");
+            return res;
+        }
+        catch (Exception ex)
+        {
+            Logger.LogError(ex, 
+                "Error while getting categories");
+            throw;
+        }
+    }
 }

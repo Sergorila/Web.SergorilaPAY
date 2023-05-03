@@ -144,7 +144,7 @@ public class UserController : ControllerBase
         }
     }
 
-    [HttpPost]
+    [HttpGet]
     [Route("Login")]
     public async Task<IActionResult> LoginUser(string login, string password)
     {
@@ -183,6 +183,8 @@ public class UserController : ControllerBase
                 access_token = encodedJwt,
                 user_name = claimsIdentity.Name,
             };
+            
+            HttpContext.Response.Cookies.Append("access_token", encodedJwt);
             
             BackgroundJob.Enqueue(() => HangFireWorker.SendEmailAboutLoging(
                 "sporeui@yandex.ru", 
