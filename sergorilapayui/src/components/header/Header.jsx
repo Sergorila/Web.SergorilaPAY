@@ -1,10 +1,7 @@
 import { useEffect, useState } from 'react';
 import './Header.scss'
 import { Link } from 'react-router-dom';
-import userimg from '../../assets/img/user_svg.svg'
-import basketimg from '../../assets/img/basket.png'
 import logoimg from '../../assets/img/logo.png'
-import Select from 'react-select'
 import UserSVG from '../UserSVG';
 import BasketSVG from '../BasketSVG';
 import {categoryService} from '../../services/CategoryService'
